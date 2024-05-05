@@ -33,12 +33,12 @@ public abstract class BaseRepository<T>(SQLiteConnection connection)
         }
     }
 
-    protected virtual async Task<int> AddAsync(string query)
+    protected virtual async Task<int> AddAsync(string query, T param)
     {
         try
         {
             await _connection.OpenAsync();
-            return await _connection.ExecuteAsync(query);
+            return await _connection.ExecuteAsync(query, param);
         }
         finally
         {

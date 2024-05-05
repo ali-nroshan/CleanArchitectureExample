@@ -9,7 +9,7 @@ public class WalletRepository(SQLiteConnection connection) : BaseRepository<Wall
     public async Task AddWallet(Wallet wallet)
     {
         string query = $"INSERT INTO Wallets (WalletId, WalletBalance, WalletCreateDate) VALUES (@WalletId, @WalletBalance, @WalletCreateDate)";
-        await AddAsync(query);
+        await AddAsync(query, wallet);
     }
 
     public async Task<Wallet?> GetWalletAsync(Guid walletId)
