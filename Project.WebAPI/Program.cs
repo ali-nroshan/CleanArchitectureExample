@@ -4,7 +4,6 @@ using Project.Infrastructure;
 var builder = WebApplication.CreateBuilder(args);
 {
     // Add services to the container.
-
     builder.Services.AddControllers();
     builder.Services.RegisterInfrastructureDependency(builder.Configuration).RegisterApplicationDependency();
 
@@ -12,7 +11,6 @@ var builder = WebApplication.CreateBuilder(args);
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
 }
-
 
 
 var app = builder.Build();
@@ -25,9 +23,7 @@ var app = builder.Build();
     }
 
     app.UseHttpsRedirection();
-
     app.UseAuthorization();
-
     app.MapControllers();
 
     app.Run();

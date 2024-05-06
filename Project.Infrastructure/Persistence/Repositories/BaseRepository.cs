@@ -25,7 +25,7 @@ public abstract class BaseRepository<T>(SQLiteConnection connection)
         try
         {
             await _connection.OpenAsync();
-            return await _connection.QueryFirstOrDefaultAsync<T>(query);
+            return await _connection.QueryFirstOrDefaultAsync<T?>(query);
         }
         finally
         {

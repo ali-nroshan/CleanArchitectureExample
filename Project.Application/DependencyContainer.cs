@@ -5,7 +5,7 @@ namespace Project.Application;
 
 public static class DependencyContainer
 {
-    public static IServiceCollection RegisterApplicationDependency(this  IServiceCollection services)
+    public static IServiceCollection RegisterApplicationDependency(this IServiceCollection services)
     {
         services.AddMediatR(mediatR =>
         {
